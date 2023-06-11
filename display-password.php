@@ -1,3 +1,7 @@
+<?php
+session_start();
+$password = $_SESSION['generated_password'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +13,16 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row py-5 justify-content-center">
-            <div class="col-5 border p-5">
-                <form action="generate-password.php" method="GET">
-                    <label for="passwordLength">Password length</label>
-                    <input name="passwordLength" type="number" min="9" max="20" class="input form-control">
-                    <button type="submit" class="btn btn-primary mt-3">Generate Password</button>
-                </form>
+        <div class="container">
+            <div class="row py-5 justify-content-center">
+                <div class="col-5 border p-5">
+                    <h2>Generated Password:</h2>
+                    <p><?php echo $password; ?></p>
+                    <a class="btn btn-primary" href="index.php">
+                        Back to Home
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 </body>
-</html>
+</div>
